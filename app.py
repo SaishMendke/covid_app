@@ -2,7 +2,7 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
 import pandas as pd
-import sklearn
+from sklearn.linear_model import LogisticRegression
 #from sklearn.linear_model import LogisticRegression
 
 app = Flask(__name__) #Initialize the flask App
