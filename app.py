@@ -1,22 +1,22 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
-import pandas as pd
-from sklearn.linear_model import LogisticRegression
+#import pandas as pd
+#from sklearn.linear_model import LogisticRegression
 #from sklearn.linear_model import LogisticRegression
 
 app = Flask(__name__) #Initialize the flask App
-#model = pickle.load(open('model.pkl', 'rb'))
+model = pickle.load(open('model.pkl', 'rb'))
 
-data = pd.read_csv('data(1).csv')
+#data = pd.read_csv('data(1).csv')
 
-x = data.iloc[:, :6]
-y = data.iloc[:, -1]
+#x = data.iloc[:, :6]
+#y = data.iloc[:, -1]
 
-regressor = LogisticRegression()
+#regressor = LogisticRegression()
 
 #Fitting model with trainig data
-regressor.fit(x, y)
+#regressor.fit(x, y)
 
 @app.route('/')
 def home():
@@ -29,7 +29,7 @@ def predict():
     '''
     int_features = [int(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
-    prediction = regressor.predict(final_features)
+    prediction = model.predict(final_features)
     #prob = model.predict_proba(final_features)
 
     output1 = round(prediction[0], 2)
