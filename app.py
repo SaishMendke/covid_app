@@ -1,7 +1,7 @@
-import numpy as np
+#import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
-#import pandas as pd
+import pandas as pd
 #from sklearn.linear_model import LogisticRegression
 #from sklearn.linear_model import LogisticRegression
 
@@ -28,7 +28,7 @@ def predict():
     For rendering results on HTML GUI
     '''
     int_features = [int(x) for x in request.form.values()]
-    final_features = [np.array(int_features)]
+    final_features = [pd.array(int_features)]
     prediction = model.predict(final_features)
     #prob = model.predict_proba(final_features)
 
