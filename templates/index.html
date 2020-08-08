@@ -19,17 +19,15 @@
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-       <label for="fever">FEVER</label>
-         <select id="fever" name="fever" placeholder="Select the category" required="required" class="custom-select">
-           <option selected>Select a category</option>
+       <select id="fever" name="fever" required="required" class="custom-select">
+           <option selected>FEVER</option>
            <option value="98">Below 98F</option>
            <option value="99">98 - 100 F</option>
            <option value="102">101-103F</option>
            <option value="104">Above 104F</option>
-         </select><br>
-       <label for="age">AGE</label>
-         <select id="age" name="age" placeholder="Age" required="required" class="custom-select">
-           <option selected>Select your Age Range</option>
+       </select><br>
+       <select id="age" name="age" required="required" class="custom-select">
+           <option selected>AGE</option>
            <option value="10">Below 20</option>
            <option value="25">21-30</option>
            <option value="35">31-40</option>
@@ -37,35 +35,31 @@
            <option value="55">51-60</option>
            <option value="65">61-70</option>
            <option value="85">Above 70</option>
-          </select><br>
-      <lable for="bodypain">Bodypain</label>         
-          <select id="bodypain" name="bodypain" placeholder="Bodypain" required="required" class="custom-select">
-            <option selected>Select a Bodypain Category</option>
+        </select><br>        
+        <select id="bodypain" name="bodypain" required="required" class="custom-select">
+            <option selected>BODYPAIN</option>
             <option value="0">No Bodypain</option>
             <option value="1">Mild Bodypain</option>
             <option value="2">Severe Bodypain</option>
-          </select><br>
-      <lable for="cold">Cold</label>         
-          <select id="cold" name="cold" placeholder="Cold" required="required" class="custom-select">
-            <option selected>Select a Category</option>
+        </select><br>   
+        <select id="cold" name="cold" placeholder="Cold" required="required" class="custom-select">
+            <option selected>COLD</option>
             <option value="0">No</option>
             <option value="1">Mild</option>
             <option value="2">Severe</option>
-          </select><br>
-      <lable for="breath">Breath</label>         
-          <select id="breath" name="breath" placeholder="Breath" required="required" class="custom-select">
-            <option selected>Select a Category</option>
+        </select><br>    
+        <select id="breath" name="breath" required="required" class="custom-select">
+            <option selected>BREATH</option>
             <option value="0">No</option>
             <option value="1">Mild</option>
             <option value="2">Severe</option>
-          </select><br>
-      <lable for="cough">Cough</label>         
-          <select id="cough" name="cough" placeholder="Cough" required="required" class="custom-select">
-            <option selected>Select a Category</option>
+        </select><br>     
+        <select id="cough" name="cough" required="required" class="custom-select">
+            <option selected>COUGH</option>
             <option value="0">No</option>
             <option value="1">Mild</option>
             <option value="2">Severe</option>
-          </select><br><br>
+        </select><br>
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
