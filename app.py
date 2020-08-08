@@ -8,8 +8,8 @@ from sklearn.linear_model import LogisticRegression
 app = Flask(__name__) #Initialize the flask App
 #model = pickle.load(open('model.pkl', 'rb'))
 
-#data = pd.read_csv('data(1).csv')
-data = np.loadtxt('data(1).csv')
+data = pd.read_csv('data(1).csv')
+#data = np.loadtxt('data(1).csv')
 
 x = data.iloc[:, :6]
 y = data.iloc[:, -1]
@@ -29,7 +29,7 @@ def predict():
     For rendering results on HTML GUI
     '''
     int_features = [int(x) for x in request.form.values()]
-    final_features = [pd.array(int_features)]
+    final_features = [np.array(int_features)]
     prediction = regressor.predict(final_features)
     #prob = model.predict_proba(final_features)
 
