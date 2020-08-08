@@ -18,12 +18,47 @@
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-        <input type="text" name="fever" placeholder="Fever" required="required" />
-        <input type="text" name="age" placeholder="Age" required="required" />
-        <input type="text" name="bodypain" placeholder="BodyPain" required="required" />
-        <input type="text" name="cold" placeholder="Cold" required="required" />
-        <input type="text" name="breath" placeholder="Breath" required="required" />
-        <input type="text" name="cough" placeholder="Cough" required="required" />
+       <label for="fever">FEVER</label>
+         <select id="fever" name="fever" placeholder="Select the category" required="required">
+           <option value="98">Below 98F</option>
+           <option value="99">98 - 100 F</option>
+           <option value="102">101-103F</option>
+           <option value="104">Above 104F</option>
+         </select>
+       <label for="age">AGE</label>
+         <select id="age" name="age" placeholder="Age" required="required">
+           <option value="10">Below 20</option>
+           <option value="25">21-30</option>
+           <option value="35">31-40</option>
+           <option value="45">41-50</option>
+           <option value="55">51-60</option>
+           <option value="65">61-70</option>
+           <option value="85">Above 70</option>
+          </select>
+      <lable for="bodypain">Bodypain</label>         
+          <select id="bodypain" name="bodypain" placeholder="Bodypain" required="required">
+            <option value="0">No Bodypain</option>
+            <option value="1">Mild Bodypain</option>
+            <option value="2">Severe Bodypain</option>
+          </select>
+      <lable for="cold">Cold</label>         
+          <select id="cold" name="cold" placeholder="Cold" required="required">
+            <option value="0">No</option>
+            <option value="1">Mild</option>
+            <option value="2">Severe</option>
+          </select>
+      <lable for="breath">Breath</label>         
+          <select id="breath" name="breath" placeholder="Breath" required="required">
+            <option value="0">No</option>
+            <option value="1">Mild</option>
+            <option value="2">Severe</option>
+          </select>
+      <lable for="cough">Cough</label>         
+          <select id="cough" name="cough" placeholder="Cough" required="required">
+            <option value="0">No</option>
+            <option value="1">Mild</option>
+            <option value="2">Severe</option>
+          </select>
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
