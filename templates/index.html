@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>ML API</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
@@ -19,16 +20,16 @@
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
        <label for="fever">FEVER</label>
-         <select id="fever" name="fever" placeholder="Select the category" required="required">
-           <option value="">Select a category</option>
+         <select id="fever" name="fever" placeholder="Select the category" required="required" class="custom-select custom-select-lg mb-3">
+           <option selected>Select a category</option>
            <option value="98">Below 98F</option>
            <option value="99">98 - 100 F</option>
            <option value="102">101-103F</option>
            <option value="104">Above 104F</option>
          </select><br>
        <label for="age">AGE</label>
-         <select id="age" name="age" placeholder="Age" required="required">
-           <option value="">Select your Age Range</option>
+         <select id="age" name="age" placeholder="Age" required="required" class="custom-select custom-select-lg mb-3">
+           <option selected>Select your Age Range</option>
            <option value="10">Below 20</option>
            <option value="25">21-30</option>
            <option value="35">31-40</option>
@@ -38,33 +39,33 @@
            <option value="85">Above 70</option>
           </select><br>
       <lable for="bodypain">Bodypain</label>         
-          <select id="bodypain" name="bodypain" placeholder="Bodypain" required="required">
-            <option value="">Select a Bodypain Category</option>
+          <select id="bodypain" name="bodypain" placeholder="Bodypain" required="required" class="custom-select custom-select-lg mb-3">
+            <option selected>Select a Bodypain Category</option>
             <option value="0">No Bodypain</option>
             <option value="1">Mild Bodypain</option>
             <option value="2">Severe Bodypain</option>
           </select><br>
       <lable for="cold">Cold</label>         
-          <select id="cold" name="cold" placeholder="Cold" required="required">
-            <option value="">Select a Category</option>
+          <select id="cold" name="cold" placeholder="Cold" required="required" class="custom-select custom-select-lg mb-3">
+            <option selected>Select a Category</option>
             <option value="0">No</option>
             <option value="1">Mild</option>
             <option value="2">Severe</option>
           </select><br>
       <lable for="breath">Breath</label>         
-          <select id="breath" name="breath" placeholder="Breath" required="required">
-            <option value="">Select a Category</option>
+          <select id="breath" name="breath" placeholder="Breath" required="required" class="custom-select custom-select-lg mb-3">
+            <option selected>Select a Category</option>
             <option value="0">No</option>
             <option value="1">Mild</option>
             <option value="2">Severe</option>
           </select><br>
       <lable for="cough">Cough</label>         
-          <select id="cough" name="cough" placeholder="Cough" required="required">
-            <option value="">Select a Category</option>
+          <select id="cough" name="cough" placeholder="Cough" required="required" class="custom-select custom-select-lg mb-3">
+            <option selected>Select a Category</option>
             <option value="0">No</option>
             <option value="1">Mild</option>
             <option value="2">Severe</option>
-          </select><br>
+          </select><br><br>
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
