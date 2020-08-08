@@ -28,12 +28,16 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
-    int_features = [int(x) for x in request.form.values()]
-    final_features = [np.array(int_features)]
-    prediction = regressor.predict(final_features)
-    #prob = model.predict_proba(final_features)
+    try:
+        int_features = [int(x) for x in request.form.values()]
+        final_features = [np.array(int_features)]
+        prediction = regressor.predict(final_features)
+        #prob = model.predict_proba(final_features)
 
-    output1 = round(prediction[0], 2)
+        output1 = round(prediction[0], 2)
+        
+    except:
+        return render_template('apology.html')
     
     return render_template('index.html', prediction_text='The prediction of COVID-19 is {}'.format(output1))
 
